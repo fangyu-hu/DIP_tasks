@@ -1,0 +1,15 @@
+clc;clear;close all;
+I=imread('Fig0911(a).png');
+subplot(1,3,1);
+imshow(I);
+title('原图');
+se=strel('disk',2);
+O=imopen(I, se);
+subplot(1,3,2);
+imshow(O);
+title('开运算') ;
+se=strel('disk',2);
+C=imclose(O, se);
+subplot(1,3,3);
+imshow(C);
+title('闭运算') ;
